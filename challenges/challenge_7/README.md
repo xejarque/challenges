@@ -12,9 +12,7 @@ using clean code principles.
 ## Instructions
 
 
-* Add a new HTTP endpoint to delete a 'Ad' from database
-* Write first the integration/unit tests and afterwards add the code to make them pass
-* Write all test scenarios first
+* Go over what we did until now and 
 
 ## Resources
 1. Summary of clean code principles: https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29 
