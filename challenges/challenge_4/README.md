@@ -14,6 +14,7 @@ In this 4th challenge we are going to persist our data into PostgreSQL.
 * Create a new service that will receive the Ad created in challenge1 and will persist it.
 * The easiest way for local development is to use a docker image for PostgreSQL.
 * Since we already went thorough error handling and testing we can handle all possible scenarios
+* You can use as orm : https://gorm.io/docs/index.html 
 
 
 ## Resources
