@@ -9,7 +9,9 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello world!")
+	fmt.Println("---------------------------------")
+	fmt.Println("|Hello world from challenge - 1!|")
+	fmt.Println("---------------------------------")
 	repository := NewInMemoryRepository()
 	postAd := NewPostAd(repository)
 	findAdById := NewFindAdById(repository)

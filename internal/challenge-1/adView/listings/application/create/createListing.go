@@ -1,15 +1,15 @@
 package listing
 
 import (
-	. "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
+	Ad "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
 	. "github.com/javier-tw/learning-go/internal/challenge-1/adView/listings/domain"
 )
 
 type CreateListingUseCase struct {
-	repository AdRepository
+	repository Ad.Repository
 }
 
-func NewCreateListing(repository AdRepository) CreateListingUseCase {
+func NewCreateListing(repository Ad.Repository) CreateListingUseCase {
 	return CreateListingUseCase{repository: repository}
 }
 

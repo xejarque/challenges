@@ -1,6 +1,6 @@
-package ads
+package Ad
 
-type AdRepository interface {
+type Repository interface {
 	SaveAd(ad Ad) error
 	FindAllAds() []Ad
 	FindById(id string) Ad

@@ -1,7 +1,7 @@
 package Listing
 
 import (
-	. "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
+	. "github.com/javier-tw/learning-go/internal/challenge-2/adView/ads/domain"
 )
 
 type Listing struct {

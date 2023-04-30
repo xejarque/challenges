@@ -1,17 +1,17 @@
 package ads
 
 import (
-	. "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
+	Ad "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
 )
 
 type FindAdById struct {
-	repository AdRepository
+	repository Ad.Repository
 }
 
-func NewFindAdById(repository AdRepository) FindAdById {
+func NewFindAdById(repository Ad.Repository) FindAdById {
 	return FindAdById{repository: repository}
 }
 
-func (useCase FindAdById) Execute(id string) Ad {
+func (useCase FindAdById) Execute(id string) Ad.Ad {
 	return useCase.repository.FindById(id)
 }

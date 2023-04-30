@@ -1,19 +1,19 @@
 package ads
 
 import (
-	. "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
+	Ad "github.com/javier-tw/learning-go/internal/challenge-1/adView/ads/domain"
 )
 
 type PostAd struct {
-	repository AdRepository
+	repository Ad.Repository
 }
 
-func NewPostAd(repository AdRepository) PostAd {
+func NewPostAd(repository Ad.Repository) PostAd {
 	return PostAd{repository: repository}
 }
 
 func (useCase PostAd) Execute(id string) error {
-	ad := CreateAd(id)
+	ad := Ad.Create(id)
 	err := useCase.repository.SaveAd(*ad)
 	if err != nil {
 		return err

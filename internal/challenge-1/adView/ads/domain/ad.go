@@ -1,4 +1,4 @@
-package ads
+package Ad
 
 import "time"
 
@@ -10,7 +10,7 @@ type Ad struct {
 	publishedAt time.Time
 }
 
-func CreateAd(id string) *Ad {
+func Create(id string) *Ad {
 	return &Ad{
 		Id:          id,
 		title:       "Title",
