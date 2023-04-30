@@ -10,7 +10,7 @@ type Description struct {
 
 var InvalidAdDescriptionError = domainError.Create("the ad description is longer than 50 characters")
 
-func CreateAdDescription(value string) (Description, error) {
+func CreateDescription(value string) (Description, error) {
 	if len(value) > 50 {
 		return Description{}, domainError.AddValue(InvalidAdDescriptionError, value)
 	}

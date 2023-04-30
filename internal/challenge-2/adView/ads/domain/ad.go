@@ -13,7 +13,7 @@ type Ad struct {
 }
 
 func Create(id string, description string) (Ad, error) {
-	adDescription, err := CreateAdDescription(description)
+	adDescription, err := CreateDescription(description)
 	if err != nil {
 		return Ad{}, err
 	}
