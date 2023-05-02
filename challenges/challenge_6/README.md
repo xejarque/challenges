@@ -1,4 +1,4 @@
-p align="center">
+<p align="center">
     <img alt="&quot;a random gopher created by gopherize.me&quot;" src="../../img/gopher-challenge-3.png" width="200px" style="display: block; margin: 0 auto"/>
 </p>
 
