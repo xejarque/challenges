@@ -3,10 +3,10 @@ p align="center">
 </p>
 
 <h1 align="center" style="text-align: center;">
-  Challenge #7. Clean code
+  Challenge #8. Clean code
 </h1>
 
-In this 7th challenge we are going to take a look back on what we did until now and try to improve it 
+In this 8th challenge we are going to take a look back on what we did until now and try to improve it 
 using clean code principles.
 
 ## Instructions
