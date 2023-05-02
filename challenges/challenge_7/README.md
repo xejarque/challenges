@@ -3,7 +3,7 @@ p align="center">
 </p>
 
 <h1 align="center" style="text-align: center;">
-  Challenge #6. TDD approach
+  Challenge #7. TDD approach
 </h1>
 
 In this 6th challenge we are going to try the TDD (Test-driven development) approach.
