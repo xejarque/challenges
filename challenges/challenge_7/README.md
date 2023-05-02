@@ -6,7 +6,7 @@ p align="center">
   Challenge #7. TDD approach
 </h1>
 
-In this 6th challenge we are going to try the TDD (Test-driven development) approach.
+In this 7th challenge we are going to try the TDD (Test-driven development) approach.
 
 ## Instructions
 
