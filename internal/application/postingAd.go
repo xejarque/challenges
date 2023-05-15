@@ -22,7 +22,7 @@ func NewPostAd(repository *infrastructure.InMemoryRepository) *PostAd {
 	return &PostAd{repository}
 }
 
-func (s *PostAd) PostAd(request PostingAdRequest) {
+func (s *PostAd) Execute(request PostingAdRequest) {
 	s.adRepository.Persist(domain.Ad{
 		Id:          request.Id,
 		Title:       request.Title,
