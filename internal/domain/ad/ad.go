@@ -1,6 +1,8 @@
-package domain
+package ad
 
 import "time"
+
+var AdNotFound = CreateDomainError("the ad was not found")
 
 type Ad struct {
 	Id          string

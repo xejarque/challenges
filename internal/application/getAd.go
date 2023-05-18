@@ -1,8 +1,7 @@
 package application
 
 import (
-	"github.com/xejarque/challenges/internal/domain"
-	"github.com/xejarque/challenges/internal/infrastructure"
+	"github.com/xejarque/challenges/internal/domain/ad"
 )
 
 type GetAdRequest struct {
@@ -10,13 +9,13 @@ type GetAdRequest struct {
 }
 
 type GetAd struct {
-	adRepository *infrastructure.InMemoryRepository
+	adRepository AdRepository
 }
 
-func NewGetAd(repository *infrastructure.InMemoryRepository) *GetAd {
+func NewGetAd(repository AdRepository) *GetAd {
 	return &GetAd{repository}
 }
 
-func (s *GetAd) Execute(request GetAdRequest) domain.Ad {
-	return s.adRepository.FindByAdId(request.Id)
+func (s *GetAd) Execute(request GetAdRequest) (ad.Ad, error) {
+	return s.adRepository.FindById(request.Id)
 }

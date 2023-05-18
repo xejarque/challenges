@@ -15,7 +15,7 @@ func main() {
 
 	//POST AD
 	var postAdService = application.NewPostAd(inMemoryRepository)
-	postAdService.Execute(application.PostingAdRequest{
+	postAdService.Execute(application.PostAdRequest{
 		Id:          "UUID3",
 		Title:       "title",
 		Description: "description",

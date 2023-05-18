@@ -1,12 +1,12 @@
 package application
 
 import (
-	"github.com/xejarque/challenges/internal/domain"
+	"github.com/xejarque/challenges/internal/domain/ad"
 	"github.com/xejarque/challenges/internal/infrastructure"
 	"time"
 )
 
-type PostingAdRequest struct {
+type PostAdRequest struct {
 	Id          string
 	Title       string
 	Description string
@@ -15,15 +15,15 @@ type PostingAdRequest struct {
 }
 
 type PostAd struct {
-	adRepository *infrastructure.InMemoryRepository
+	adRepository *infrastructure.InMemoryAdRepository
 }
 
-func NewPostAd(repository *infrastructure.InMemoryRepository) *PostAd {
+func NewPostAd(repository *infrastructure.InMemoryAdRepository) *PostAd {
 	return &PostAd{repository}
 }
 
-func (s *PostAd) Execute(request PostingAdRequest) {
-	s.adRepository.Persist(domain.Ad{
+func (s *PostAd) Execute(request PostAdRequest) {
+	s.adRepository.Persist(ad.Ad{
 		Id:          request.Id,
 		Title:       request.Title,
 		Description: request.Description,
