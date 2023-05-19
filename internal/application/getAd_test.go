@@ -10,13 +10,7 @@ import (
 )
 
 func Test_Should_Get_Ad_By_Id(t *testing.T) {
-	expectedAd := ad.Ad{
-		Id:          "id",
-		Title:       "title",
-		Description: "description",
-		Price:       10,
-		Created:     time.Now(),
-	}
+	expectedAd := anAd()
 	repository := mocks.NewAdRepository(t)
 	repository.EXPECT().FindById(mock.Anything).Return(expectedAd, nil)
 	getAd := GetAd{repository}
@@ -35,4 +29,14 @@ func Test_Should_Not_Found_Ad_By_Id(t *testing.T) {
 	_, actualError := getAd.Execute(GetAdRequest{Id: "id"})
 
 	assert.Equal(t, ad.AdNotFound, actualError)
+}
+
+func anAd() ad.Ad {
+	return ad.Ad{
+		Id:          "id",
+		Title:       "title",
+		Description: "description",
+		Price:       10,
+		Created:     time.Now(),
+	}
 }
