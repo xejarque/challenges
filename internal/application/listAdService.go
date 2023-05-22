@@ -6,7 +6,7 @@ import (
 )
 
 type ListAd struct {
-	adRepository *infrastructure.InMemoryAdRepository
+	AdRepository *infrastructure.InMemoryAdRepository
 }
 
 func NewListAdService(repository *infrastructure.InMemoryAdRepository) *ListAd {
@@ -14,6 +14,6 @@ func NewListAdService(repository *infrastructure.InMemoryAdRepository) *ListAd {
 }
 
 func (s *ListAd) Execute() []ad.Ad {
-	all, _ := s.adRepository.FindAll()
+	all, _ := s.AdRepository.FindAll()
 	return all
 }
