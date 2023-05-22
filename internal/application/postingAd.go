@@ -15,7 +15,7 @@ type PostAdRequest struct {
 }
 
 type PostAd struct {
-	adRepository *infrastructure.InMemoryAdRepository
+	AdRepository *infrastructure.InMemoryAdRepository
 }
 
 func NewPostAd(repository *infrastructure.InMemoryAdRepository) *PostAd {
@@ -23,11 +23,14 @@ func NewPostAd(repository *infrastructure.InMemoryAdRepository) *PostAd {
 }
 
 func (s *PostAd) Execute(request PostAdRequest) {
-	s.adRepository.Persist(ad.Ad{
+	err := s.AdRepository.Persist(ad.Ad{
 		Id:          request.Id,
 		Title:       request.Title,
 		Description: request.Description,
 		Price:       request.Price,
 		Created:     request.Created,
 	})
+	if err != nil {
+		return
+	}
 }

@@ -35,4 +35,6 @@ func TestHandler_PostAd(t *testing.T) {
 	router.ServeHTTP(recorder, request)
 
 	assert.Equal(t, 201, recorder.Code)
+	assert.Equal(t, 3, len(AdRepository.Ads))
+
 }
