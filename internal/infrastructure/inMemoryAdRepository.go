@@ -45,11 +45,13 @@ func (r *InMemoryAdRepository) Persist(ad Ad) error {
 	r.Ads[ad.Id] = ad
 	return nil
 }
-func (r *InMemoryAdRepository) FindById(adId string) (result Ad, err error) {
-	if _, ok := r.Ads[adId]; ok {
+func (r *InMemoryAdRepository) FindById(adId string) (result *Ad, err error) {
+	if adFound, ok := r.Ads[adId]; ok {
+		result = &adFound
+	} else {
 		err = AddError(AdNotFound, adId)
+		result = nil
 	}
-	result = r.Ads[adId]
 	return
 }
 

@@ -9,13 +9,13 @@ type GetAdRequest struct {
 }
 
 type GetAd struct {
-	adRepository AdRepository
+	AdRepository AdRepository
 }
 
 func NewGetAd(repository AdRepository) *GetAd {
 	return &GetAd{repository}
 }
 
-func (s *GetAd) Execute(request GetAdRequest) (ad.Ad, error) {
-	return s.adRepository.FindById(request.Id)
+func (s *GetAd) Execute(request GetAdRequest) (*ad.Ad, error) {
+	return s.AdRepository.FindById(request.Id)
 }

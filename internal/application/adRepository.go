@@ -8,5 +8,5 @@ import (
 type AdRepository interface {
 	Persist(ad Ad) error
 	FindAll() ([]Ad, error)
-	FindById(id string) (Ad, error)
+	FindById(id string) (*Ad, error)
 }

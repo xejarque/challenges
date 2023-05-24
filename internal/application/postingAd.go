@@ -11,7 +11,10 @@ type PostAdRequest struct {
 	Title       string
 	Description string
 	Price       float64
-	Created     time.Time
+}
+
+type PostAdResponse struct {
+	Id string
 }
 
 type PostAd struct {
@@ -22,15 +25,13 @@ func NewPostAd(repository *infrastructure.InMemoryAdRepository) *PostAd {
 	return &PostAd{repository}
 }
 
-func (s *PostAd) Execute(request PostAdRequest) {
-	err := s.AdRepository.Persist(ad.Ad{
+func (s *PostAd) Execute(request PostAdRequest) PostAdResponse {
+	_ = s.AdRepository.Persist(ad.Ad{
 		Id:          request.Id,
 		Title:       request.Title,
 		Description: request.Description,
 		Price:       request.Price,
-		Created:     request.Created,
+		Created:     time.Now(),
 	})
-	if err != nil {
-		return
-	}
+	return PostAdResponse{Id: request.Id}
 }
